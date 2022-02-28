@@ -53,8 +53,8 @@
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                        <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Profile') }}</a>
-                        <a class="dropdown-item" href="#">{{ __('Settings') }}</a>
+                        <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Perfil') }}</a>
+                        <a class="dropdown-item" href="#">{{ __('Configuracion') }}</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Cerrar Sesión') }}</a>
 
