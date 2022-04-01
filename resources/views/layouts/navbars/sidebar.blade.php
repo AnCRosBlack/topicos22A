@@ -13,7 +13,7 @@
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'usuarios' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('usuarios') }}">
+        <a class="nav-link" href="{{ route('usuarios.index') }}">
 
 
           <i class="material-icons">people</i>
@@ -21,22 +21,19 @@
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'clientes' ? ' active' : '' }}">
-        <a class="nav-link" href="#">
-
+        <a class="nav-link" href="{{ route('cliente') }}">
           <i class="material-icons">groups</i>
             <p>{{ __('Clientes') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'proveedor' ? ' active' : '' }}">
-        <a class="nav-link" href="#">
-
+        <a class="nav-link" href="{{ route('proveedor') }}">
           <i class="material-icons">assignment_ind</i>
           <p>{{ __('Proveedores') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'productos' ? ' active' : '' }}">
-        <a class="nav-link" href="#">
-
+        <a class="nav-link" href="{{ route('producto') }}">
           <i class="material-icons">shopping_cart</i>
             <p>{{ __('Productos') }}</p>
         </a>

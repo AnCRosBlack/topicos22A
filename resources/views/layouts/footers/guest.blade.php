@@ -6,7 +6,7 @@
         &copy;
         <script>
             document.write(new Date().getFullYear())
-        </script>, Proyecto creado <i class="material-icons">check_circle</i> para la clase de topícos.
+        </script>, Proyecto creado por Antonio Chavarin Rosales <i class="material-icons">check_circle</i> para la clase de topícos.
         </div>
     </div>
 </footer>

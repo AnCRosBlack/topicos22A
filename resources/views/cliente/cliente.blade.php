@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'usuarios', 'titlePage' => __('Usuarios')])
+@extends('layouts.app', ['activePage' => 'clientes', 'titlePage' => __('Clientes')])
 
 @section('content')
 <div class="content">
@@ -21,6 +21,7 @@
 <script>
     $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
+        md.initDashboardPageCharts();
         md.initDashboardPageCharts();
     });
 
