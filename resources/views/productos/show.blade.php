@@ -42,7 +42,7 @@
                                                         <button class="btn btn-sm">Regresar</button> </a>
                                                 </div>
                                                 <div class="button-container">
-                                                    <a href="{{route('usuarios.edit',$user->id)}}">
+                                                    <a href="{{route('usuario.edit',$user->id)}}">
                                                         <button class="btn btn-sm btn-primary">Editar </button> </a>
                                                 </div>
                                             </div>

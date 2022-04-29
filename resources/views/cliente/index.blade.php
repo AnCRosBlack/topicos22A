@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'usuarios', 'titlePage' => __('Usuarios')])
+@extends('layouts.app', ['activePage' => 'clientes', 'titlePage' => __('Clientes')])
 
 @section('content')
 
@@ -43,8 +43,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">Usuarios</h4>
-                                <p class="card-category">Usuarios registrados</p>
+                                <h4 class="card-title">Clientes</h4>
+                                <p class="card-category">Clientes registrados</p>
                             </div>
                             <div class="card-body">
                                 @if (session('success'))
@@ -55,7 +55,7 @@
                                 <div class="row">
                                     <div class="col-12 text-right">
 
-                                        <a href="{{ route('usuarios.create') }}" class="btn btn-sm btn-primary">Añadir usuario</a>
+                                        <a href="{{ route('clientes.create') }}" class="btn btn-sm btn-primary">Añadir cliente</a>
 
                                     </div>
                                 </div>
@@ -70,16 +70,16 @@
 
                                         </thead>
                                         <tbody>
-                                            @foreach($Usuarios as $user)
+                                            @foreach($Clientes as $cliente)
                                             <tr>
-                                                <td>{{$user->id}} </td>
-                                                <td>{{$user->name}} </td>
-                                                <td>{{$user->email}} </td>
-                                                <td>{{$user->created_at}} </td>
+                                                <td>{{$cliente->id}} </td>
+                                                <td>{{$cliente->name}} </td>
+                                                <td>{{$cliente->email}} </td>
+                                                <td>{{$cliente->created_at}} </td>
                                                 <td class="td-actions text-right">
-                                                    <a href="{{route('usuarios.show', $user->id)}}" class="btn btn-info"><i class="material-icons">person</i></a>
-                                                    <a href="{{route('usuarios.edit', $user->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
-                                                    <a onclick="return EliminarRegistro('Eliminar usuario')" href="{{ route('usuarios.destroy', $user->id) }}" class="btn btn-danger"><i class="material-icons">close</i></a>
+                                                    <a href="{{route('clientes.show', $cliente->id)}}" class="btn btn-info"><i class="material-icons">person</i></a>
+                                                    <a href="{{route('clientes.edit', $cliente->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
+                                                    <a onclick="return EliminarRegistro('Eliminar usuario')" href="{{ route('clientes.destroy', $cliente->id) }}" class="btn btn-danger"><i class="material-icons">close</i></a>
 
                                                 </td>
 
@@ -93,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="card-footer mr-auto">
-                            {!! $Usuarios->links() !!}
+                            {!! $Clientes->links() !!}
                                 {{-- {{$Usuarios->links()}} --}}
                             </div>
                         </div>

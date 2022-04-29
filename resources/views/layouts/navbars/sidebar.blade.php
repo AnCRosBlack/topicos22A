@@ -21,7 +21,7 @@
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'clientes' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('cliente') }}">
+        <a class="nav-link" href="{{ route('clientes.index') }}">
           <i class="material-icons">groups</i>
             <p>{{ __('Clientes') }}</p>
         </a>

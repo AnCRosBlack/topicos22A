@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Str;
+
 
 
 class UserController extends Controller
@@ -20,14 +18,14 @@ class UserController extends Controller
      */
   
 
-    public function user()
+    public function index()
     {
         // $Usuarios = User::query()->paginate(5);
          $Usuarios = User::paginate(5);
         // $len = User::all();
         return view('usuarios.index',compact('Usuarios'));
     }
-    public function createuser()
+    public function create()
     {
         return view('usuarios.create');
     }
@@ -41,7 +39,7 @@ class UserController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function edit(Request $request, $id)
     {
         $user = User::findorFail($id);
         $data = $request->only('name','email');
@@ -61,16 +59,16 @@ class UserController extends Controller
         return view('usuarios.show',compact('user'));
     }
 
-    public function getUpdate($id)
+    public function getEdit($id)
     {
         $usuario = User::where('id', $id)->get();
-        return view('usuarios.update',compact('usuario'));
+        return view('usuarios.edit',compact('usuario'));
     }
 
-    public function delete($id){
+    public function destroy($id){
             $usuario = User::findOrFail($id);
             $usuario->delete();
-            return redirect()->action([UserController::class, 'user']);
+            return redirect()->action([UserController::class, 'index'])->with('success', 'Usuario eliminado exitosamente');
     }
     
 }

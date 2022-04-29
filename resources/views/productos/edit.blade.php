@@ -8,7 +8,7 @@
                 @foreach ($usuario as $user)
                 <form action="{{route('usuarios.update', $user->id)}}" method="post" class="form-horizontal">
                     @csrf
-                    
+                    @method("PUT")
                     <div class="card">
                         <div class="card-header card-header-primary">
                             <h4 class="card-title">Usuario</h4>
@@ -36,7 +36,7 @@
                         </div>
                         @endforeach
                         <div class="card-footer ml-auto mr-auto">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
                         </div>
                     </div>
                 </form>

@@ -19,98 +19,51 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//pagina principal redireccionada al login
 Route::get('/', function () {
     return view('auth.login');
-	// return view('index');
 });
 
 Auth::routes();
 
+//pagina principal despues de login
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/usuarios',  [UserController::class, 'user'])->name('usuarios.index');
-Route::get('/proveedor',  [ProviderController::class, 'provider'])->name('proveedor');
-Route::get('/producto',  [ProductController::class, 'product'])->name('producto');
-Route::get('/cliente',  [ClientController::class, 'client'])->name('cliente');
 
 
+//funciones del usuario
+Route::get('/usuarios',  [UserController::class, 'index'])->name('usuarios.index');
 Route::post('/usuarios/crear',  [UserController::class, 'store'])->name('usuarios.store');
-Route::get('/usuarios/crear',  [UserController::class, 'createuser'])->name('usuarios.create');
-Route::post('/proveedor/crear',  [ProviderController::class, 'createprovider'])->name('proveedor.create');
-Route::post('/producto/crear',  [ProductController::class, 'createproduct'])->name('producto.create');
-Route::post('/cliente/crear',  [ClientController::class, 'createclient'])->name('cliente.create');
-
-Route::get('/usuarios/update/{id}',  [UserController::class, 'getUpdate'])->name('usuario.update');
-Route::post('/usuarios/update/{id}',  [UserController::class, 'update'])->name('usuarios.update');
-
-
-// Route::get('/usuarios/crear',  [UserController::class, 'createuser'])->name('usuarios.create');
-Route::post('/proveedor/crear',  [ProviderController::class, 'createprovider'])->name('proveedor.create');
-Route::post('/producto/crear',  [ProductController::class, 'createproduct'])->name('producto.create');
-Route::post('/cliente/crear',  [ClientController::class, 'createclient'])->name('cliente.create');
-
-Route::get('/usuarios/{id}', [UserController::class, 'delete'])->name('usuario.delete');
-
+Route::get('/usuarios/crear',  [UserController::class, 'create'])->name('usuarios.create');
+Route::get('/usuarios/update/{id}',  [UserController::class, 'getEdit'])->name('usuarios.getEdit');
+Route::put('/usuarios/update/{id}',  [UserController::class, 'edit'])->name('usuarios.edit');
+Route::get('/usuarios/{id}', [UserController::class, 'destroy'])->name('usuarios.destroy');
 Route::get('/usuario/{user}', [UserController::class, 'show'])->name('usuarios.show');
 
+//funciones del cliente
+Route::get('/clientes',  [ClientController::class, 'index'])->name('clientes.index');
+Route::post('/clientes/crear',  [ClientController::class, 'store'])->name('clientes.store');
+Route::get('/clientes/crear',  [ClientController::class, 'create'])->name('clientes.create');
+Route::get('/clientes/update/{id}',  [ClientController::class, 'getEdit'])->name('clientes.getEdit');
+Route::put('/clientes/update/{id}',  [ClientController::class, 'edit'])->name('clientes.edit');
+Route::get('/clientes/{id}', [ClientController::class, 'destroy'])->name('clientes.destroy');
+Route::get('/cliente/{cliente}', [ClientController::class, 'show'])->name('clientes.show');
 
-Auth::routes();
+//funciones del proveedor
+Route::get('/proveedor',  [ProviderController::class, 'provider'])->name('proveedor');
 
-
-// Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
-
-
-Route::post('registrarUsuario',  [RegisterController::class, 'create']);
-
-Route::get('/perfil',  [UsuarioController::class, 'getUsuario']);
-
-Route::post('registrarProducto',  [ProductoController::class, 'create']);
-
-// Route::get('/producto',  [UsuarioController::class, 'getProducto']);
-
-Route::get('/acerca-de', function () {
-    return view('acerca-de');
-});
+//funciones de producto
+Route::get('/producto',  [ProductController::class, 'product'])->name('producto');
 
 
 
 
+// Route::post('/proveedor/crear',  [ProviderController::class, 'createprovider'])->name('proveedor.create');
+// Route::post('/producto/crear',  [ProductController::class, 'createproduct'])->name('producto.create');
+// Route::post('/cliente/crear',  [ClientController::class, 'createclient'])->name('cliente.create');
 
-Route::group(['middleware' => 'auth'], function () {
-	Route::get('table-list', function () {
-		return view('pages.table_list');
-	})->name('table');
+ 
 
-	Route::get('typography', function () {
-		return view('pages.typography');
-	})->name('typography');
-
-	Route::get('icons', function () {
-		return view('pages.icons');
-	})->name('icons');
-
-	Route::get('map', function () {
-		return view('pages.map');
-	})->name('map');
-
-	Route::get('notifications', function () {
-		return view('pages.notifications');
-	})->name('notifications');
-
-	Route::get('rtl-support', function () {
-		return view('pages.language');
-	})->name('language');
-
-	Route::get('upgrade', function () {
-		return view('pages.upgrade');
-	})->name('upgrade');
-});
-
-
-Route::group(['middleware' => 'auth'], function () {
-	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
-	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
-	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
-	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
-});
+// Route::post('registrarUsuario',  [RegisterController::class, 'create']);
 
 
