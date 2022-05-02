@@ -65,7 +65,9 @@
                                             <th>ID</th>
                                             <th>Nombre</th>
                                             <th>Correo</th>
-                                            <th>Fecha de creación</th>
+                                            <th>Telefono</th>
+                                            <th>Dirección</th>
+                                            <th>País</th>
                                             <th class="text-right">Acciones</th>
 
                                         </thead>
@@ -75,7 +77,9 @@
                                                 <td>{{$cliente->id}} </td>
                                                 <td>{{$cliente->name}} </td>
                                                 <td>{{$cliente->email}} </td>
-                                                <td>{{$cliente->created_at}} </td>
+                                                <td>{{$cliente->telefono}} </td>
+                                                <td>{{$cliente->direccion}} </td>
+                                                <td>{{$cliente->pais}} </td>
                                                 <td class="td-actions text-right">
                                                     <a href="{{route('clientes.show', $cliente->id)}}" class="btn btn-info"><i class="material-icons">person</i></a>
                                                     <a href="{{route('clientes.edit', $cliente->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>

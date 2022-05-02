@@ -27,6 +27,36 @@
                                     <input type="email" class="form-control" name="email" placeholder="Correo" value="{!!  $client->email !!}">
                                 </div>
                             </div>
+                            <div class="row">
+                                <label for="name" class="col-sm-2 col-form-label">Dirección</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" name="direccion" placeholder="Dirección" value="{!!  $client->direccion !!}">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="name" class="col-sm-2 col-form-label">Telefono</label>
+                                <div class="col-sm-7">
+                                    <input type="number" class="form-control" name="telefono" placeholder="Telefono" value="{!!  $client->telefono !!}">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="name" class="col-sm-2 col-form-label">Sexo</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" name="sexo" placeholder="F ó M" value="{!!  $client->sexo !!}">
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <label for="name" class="col-sm-2 col-form-label">País</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" name="pais" placeholder="País" value="{!!  $client->pais !!}">
+
+                                </div>
+                            </div>
+
                         </div>
                         @endforeach
                         <div class="card-footer ml-auto mr-auto">

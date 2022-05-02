@@ -19,7 +19,8 @@ class ClientController extends Controller
 
     public function store(Request $request)
     {
-        Cliente::create($request->only('name','email'));
+
+        Cliente::create($request->all());
         return redirect()->route('clientes.index')->with('success','Cliente creado');
     }
 
@@ -27,7 +28,7 @@ class ClientController extends Controller
     public function edit(Request $request, $id)
     {
         $Cliente = Cliente::findorFail($id);
-        $data = $request->only('name','email');
+        // $data = $request->only('name','email');
         
         $data=$request->all();
         
