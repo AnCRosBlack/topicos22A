@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'clientes', 'titlePage' => __('Clientes')])
+@extends('layouts.app', ['activePage' => 'proveedor', 'titlePage' => __('Proveedor')])
 
 @section('content')
 
@@ -43,8 +43,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">Clientes</h4>
-                                <p class="card-category">Clientes registrados</p>
+                                <h4 class="card-title">Proveedor</h4>
+                                <p class="card-category">Proveedores registrados</p>
                             </div>
                             <div class="card-body">
                                 @if (session('success'))
@@ -55,7 +55,7 @@
                                 <div class="row">
                                     <div class="col-12 text-right">
 
-                                        <a href="{{ route('clientes.create') }}" class="btn btn-sm btn-primary">Añadir cliente</a>
+                                        <a href="{{ route('proveedor.create') }}" class="btn btn-sm btn-primary">Añadir proveedor</a>
 
                                     </div>
                                 </div>
@@ -64,26 +64,28 @@
                                         <thead class="text-primary">
                                             <th>ID</th>
                                             <th>Nombre</th>
-                                            <th>Correo</th>
+                                            <th>Direccion</th>
                                             <th>Telefono</th>
-                                            <th>Dirección</th>
+                                            <th>Ciudad</th>
+                                            <th>Estado</th>
                                             <th>País</th>
                                             <th class="text-right">Acciones</th>
 
                                         </thead>
                                         <tbody>
-                                            @foreach($Clientes as $cliente)
+                                            @foreach($Proveedores as $proveedor)
                                             <tr>
-                                                <td>{{$cliente->id}} </td>
-                                                <td>{{$cliente->name}} </td>
-                                                <td>{{$cliente->email}} </td>
-                                                <td>{{$cliente->telefono}} </td>
-                                                <td>{{$cliente->direccion}} </td>
-                                                <td>{{$cliente->pais}} </td>
+                                                <td>{{$proveedor->id}} </td>
+                                                <td>{{$proveedor->nombre}} </td>
+                                                <td>{{$proveedor->direccion}} </td>
+                                                <td>{{$proveedor->telefono}} </td>
+                                                <td>{{$proveedor->ciudad}} </td>
+                                                <td>{{$proveedor->estado}} </td>
+                                                <td>{{$proveedor->pais}} </td>
                                                 <td class="td-actions text-right">
-                                                    <a href="{{route('clientes.show', $cliente->id)}}" class="btn btn-info"><i class="material-icons">person</i></a>
-                                                    <a href="{{route('clientes.edit', $cliente->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
-                                                    <a onclick="return EliminarRegistro('Eliminar Cliente')" href="{{ route('clientes.destroy', $cliente->id) }}" class="btn btn-danger"><i class="material-icons">close</i></a>
+                                                    <a href="{{route('proveedor.show', $proveedor->id)}}" class="btn btn-info"><i class="material-icons">person</i></a>
+                                                    <a href="{{route('proveedor.edit', $proveedor->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
+                                                    <a onclick="return EliminarRegistro('Eliminar Proveedor')" href="{{ route('proveedor.destroy', $proveedor->id) }}" class="btn btn-danger"><i class="material-icons">close</i></a>
 
                                                 </td>
 
@@ -97,7 +99,7 @@
                                 </div>
                             </div>
                             <div class="card-footer mr-auto">
-                            {!! $Clientes->links() !!}
+                            {!! $Proveedores->links() !!}
                                 {{-- {{$Usuarios->links()}} --}}
                             </div>
                         </div>

@@ -1,12 +1,12 @@
-@extends('layouts.app', ['activePage' => 'usuarios', 'titlePage' => __('Usuarios')])
+@extends('layouts.app', ['activePage' => 'proveedor', 'titlePage' => __('Proveedor')])
 @section('content')
 
 <div class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                @foreach ($usuario as $user)
-                <form action="{{route('usuarios.update', $user->id)}}" method="post" class="form-horizontal">
+                @foreach ($proveedor as $user)
+                <form action="{{route('proveedor.edit', $user->id)}}" method="post" class="form-horizontal">
                     @csrf
                     @method("PUT")
                     <div class="card">
@@ -18,19 +18,37 @@
                             <div class="row">
                                 <label for="name" class="col-sm-2 col-form-label">Nombre</label>
                                 <div class="col-sm-7">
-                                    <input type="text" class="form-control" name="name" value="{!!  $user->name !!}" placeholder="Nombre" autofocus>
+                                    <input type="text" class="form-control" name="nombre" value="{!!  $user->nombre!!}" placeholder="Nombre">
                                 </div>
                             </div>
                             <div class="row">
-                                <label for="name" class="col-sm-2 col-form-label">Correo</label>
+                                <label for="name" class="col-sm-2 col-form-label">Dirección</label>
                                 <div class="col-sm-7">
-                                    <input type="email" class="form-control" name="email" placeholder="Correo" value="{!!  $user->email !!}">
+                                    <input type="text" class="form-control" name="direccion" placeholder="Dirección" value="{!!  $user->direccion !!}">
                                 </div>
                             </div>
                             <div class="row">
-                                <label for="name" class="col-sm-2 col-form-label">Contraseña</label>
+                                <label for="name" class="col-sm-2 col-form-label">Telefono</label>
                                 <div class="col-sm-7">
-                                    <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                                    <input type="number" class="form-control" name="telefono" placeholder="Telefono" value="{!!  $user->telefono !!}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="name" class="col-sm-2 col-form-label">Ciudad</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" name="ciudad" placeholder="Ciudad" value="{!!  $user->ciudad !!}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="name" class="col-sm-2 col-form-label">Estado</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" name="estado" placeholder="Estado" value="{!!  $user->estado !!}">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="name" class="col-sm-2 col-form-label">País</label>
+                                <div class="col-sm-7">
+                                    <input type="text" class="form-control" name="pais" placeholder="País" value="{!!  $user->pais !!}">
                                 </div>
                             </div>
                         </div>

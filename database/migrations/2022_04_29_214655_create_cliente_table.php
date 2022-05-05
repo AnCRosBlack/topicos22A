@@ -20,7 +20,7 @@ class CreateClienteTable extends Migration
             $table->string('sexo');
             $table->string('direccion');
             $table->integer('telefono');
-             $table->string('pais');
+            $table->string('pais');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

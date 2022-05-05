@@ -41,29 +41,29 @@ Route::get('/usuarios/{id}', [UserController::class, 'destroy'])->name('usuarios
 Route::get('/usuario/{user}', [UserController::class, 'show'])->name('usuarios.show');
 
 //funciones del cliente
-Route::get('/clientes',  [ClientController::class, 'index'])->name('clientes.index');
-Route::post('/clientes/crear',  [ClientController::class, 'store'])->name('clientes.store');
-Route::get('/clientes/crear',  [ClientController::class, 'create'])->name('clientes.create');
-Route::get('/clientes/update/{id}',  [ClientController::class, 'getEdit'])->name('clientes.getEdit');
-Route::put('/clientes/update/{id}',  [ClientController::class, 'edit'])->name('clientes.edit');
-Route::get('/clientes/{id}', [ClientController::class, 'destroy'])->name('clientes.destroy');
-Route::get('/cliente/{cliente}', [ClientController::class, 'show'])->name('clientes.show');
+Route::get('/clientes',  [ClientController::class, 'indexCliente'])->name('clientes.index');
+Route::post('/clientes/crear',  [ClientController::class, 'storeCliente'])->name('clientes.store');
+Route::get('/clientes/crear',  [ClientController::class, 'createCliente'])->name('clientes.create');
+Route::get('/clientes/update/{id}',  [ClientController::class, 'getEditCliente'])->name('clientes.getEdit');
+Route::put('/clientes/update/{id}',  [ClientController::class, 'editCliente'])->name('clientes.edit');
+Route::get('/clientes/{id}', [ClientController::class, 'destroyCliente'])->name('clientes.destroy');
+Route::get('/cliente/{cliente}', [ClientController::class, 'showCliente'])->name('clientes.show');
 
 //funciones del proveedor
-Route::get('/proveedor',  [ProviderController::class, 'provider'])->name('proveedor');
+Route::get('/proveedor',  [ProviderController::class, 'indexProveedor'])->name('proveedor.index');
+Route::post('/proveedor/crear',  [ProviderController::class, 'storeProveedor'])->name('proveedor.store');
+Route::get('/proveedor/crear',  [ProviderController::class, 'createProveedor'])->name('proveedor.create');
+Route::get('/proveedor/update/{id}',  [ProviderController::class, 'getEditProveedor'])->name('proveedor.getEdit');
+Route::put('/proveedor/update/{id}',  [ProviderController::class, 'editProveedor'])->name('proveedor.edit');
+Route::get('/proveedores/{id}', [ProviderController::class, 'destroyProveedor'])->name('proveedor.destroy');
+Route::get('/proveedor/{proveedor}', [ProviderController::class, 'showProveedor'])->name('proveedor.show');
+
 
 //funciones de producto
-Route::get('/producto',  [ProductController::class, 'product'])->name('producto');
-
-
-
-
-// Route::post('/proveedor/crear',  [ProviderController::class, 'createprovider'])->name('proveedor.create');
-// Route::post('/producto/crear',  [ProductController::class, 'createproduct'])->name('producto.create');
-// Route::post('/cliente/crear',  [ClientController::class, 'createclient'])->name('cliente.create');
-
- 
-
-// Route::post('registrarUsuario',  [RegisterController::class, 'create']);
-
-
+Route::get('/producto',  [ProductController::class, 'indexProducto'])->name('producto.index');
+Route::post('/producto/crear',  [ProductController::class, 'storeProducto'])->name('producto.store');
+Route::get('/producto/crear',  [ProductController::class, 'createProducto'])->name('producto.create');
+Route::get('/producto/update/{id}',  [ProductController::class, 'getEditProducto'])->name('producto.getEdit');
+Route::put('/producto/update/{id}',  [ProductController::class, 'editProducto'])->name('producto.edit');
+Route::get('/producto/{id}', [ProductController::class, 'destroyProducto'])->name('producto.destroy');
+Route::get('/producto/{producto}', [ProductController::class, 'showProducto'])->name('producto.show');

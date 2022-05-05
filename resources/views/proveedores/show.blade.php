@@ -11,21 +11,24 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">Usuarios</h4>
-                                <p class="card-category">Detalles del usuario {{$user->name}}</p>
+                                <h4 class="card-title">Proveedor</h4>
+                                <p class="card-category">Detalles del proveedor {{$proveedor->nombre}}</p>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <div class="card card-user">
+                                        <div class="card card-proveedor">
                                             <div class="card-body">
                                                 <p class="card-text">
                                                     <div class="author">
                                                         <img src="{{asset('material') }}/img/laravel.svg" alt="image" class="avatar">
-                                                        <h5 class="title mt-3">{{$user->name}}</h5>
+                                                        <h5 class="title mt-3">{{$proveedor->nombre}}</h5>
                                                         <p class="description">
-                                                            {{$user->email}}<br>
-                                                            {{$user->created_at}}<br>
+                                                            {{$proveedor->direccion}}<br>
+                                                            {{$proveedor->telefono}}<br>
+                                                            {{$proveedor->ciudad}}<br>
+                                                            {{$proveedor->estado}}<br>
+                                                            {{$proveedor->pais}}<br>
                                                         </p>
                                                     </div>
                                                 </p>
@@ -38,11 +41,11 @@
                                             <div class="card-footer">
 
                                                 <div class="button-container">
-                                                    <a href="{{route('usuarios.index')}}">
+                                                    <a href="{{route('proveedor.index')}}">
                                                         <button class="btn btn-sm">Regresar</button> </a>
                                                 </div>
                                                 <div class="button-container">
-                                                    <a href="{{route('usuario.edit',$user->id)}}">
+                                                    <a href="{{route('proveedor.edit',$proveedor->id)}}">
                                                         <button class="btn btn-sm btn-primary">Editar </button> </a>
                                                 </div>
                                             </div>

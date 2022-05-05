@@ -25,6 +25,15 @@
                                                         <h5 class="title mt-3">{{$cliente->name}}</h5>
                                                         <p class="description">
                                                             {{$cliente->email}}<br>
+
+                                                            @if($cliente->sexo == 'M')
+                                                                Masculino
+                                                            @else
+                                                                Femenino
+                                                            @endif<br>
+                                                            {{$cliente->direccion}}<br>
+                                                            {{$cliente->telefono}}<br>
+                                                            {{$cliente->pais}}<br>
                                                             {{$cliente->created_at}}<br>
                                                         </p>
                                                     </div>

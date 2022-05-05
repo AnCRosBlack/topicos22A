@@ -27,13 +27,13 @@
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'proveedor' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('proveedor') }}">
+        <a class="nav-link" href="{{ route('proveedor.index') }}">
           <i class="material-icons">assignment_ind</i>
           <p>{{ __('Proveedores') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'productos' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('producto') }}">
+        <a class="nav-link" href="{{ route('producto.index') }}">
           <i class="material-icons">shopping_cart</i>
             <p>{{ __('Productos') }}</p>
         </a>

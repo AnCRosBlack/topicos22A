@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
-    public function index()
+    public function indexCliente()
     {
         $Clientes = Cliente::paginate(5);
         return view('cliente.index',compact('Clientes'));
     }
-    public function create()
+    public function createCliente()
     {
         return view('cliente.create');
     }
 
-    public function store(Request $request)
+    public function storeCliente(Request $request)
     {
 
         Cliente::create($request->all());
@@ -25,7 +25,7 @@ class ClientController extends Controller
     }
 
 
-    public function edit(Request $request, $id)
+    public function editCliente(Request $request, $id)
     {
         $Cliente = Cliente::findorFail($id);
         // $data = $request->only('name','email');
@@ -36,20 +36,20 @@ class ClientController extends Controller
         return redirect()->route('clientes.index')->with('success', 'Cliente actualizado exitosamente');
     }
 
-    public function show(Cliente $cliente){
+    public function showCliente(Cliente $cliente){
         return view('cliente.show',compact('cliente'));
     }
 
-    public function getEdit($id)
+    public function getEditCliente($id)
     {
         $cliente = Cliente::where('id', $id)->get();
         return view('cliente.edit',compact('cliente'));
     }
 
-    public function destroy($id){
+    public function destroyCliente($id){
             $cliente = Cliente::findOrFail($id);
             $cliente->delete();
-            return redirect()->action([ClientController::class, 'index'])->with('success', 'Cliente eliminado exitosamente');
+            return redirect()->action([ClientController::class, 'indexCliente'])->with('success', 'Cliente eliminado exitosamente');
     }
     
 }
