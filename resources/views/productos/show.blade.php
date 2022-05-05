@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'usuarios', 'titlePage' => __('Usuarios')])
+@extends('layouts.app', ['activePage' => 'productos', 'titlePage' => __('Productos')])
 
 
 @section('content')
@@ -11,8 +11,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">Usuarios</h4>
-                                <p class="card-category">Detalles del usuario {{$user->name}}</p>
+                                <h4 class="card-title">Productos</h4>
+                                <p class="card-category">Detalles del producto {{$producto->nombre}}</p>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -22,10 +22,14 @@
                                                 <p class="card-text">
                                                     <div class="author">
                                                         <img src="{{asset('material') }}/img/laravel.svg" alt="image" class="avatar">
-                                                        <h5 class="title mt-3">{{$user->name}}</h5>
+                                                        <h5 class="title mt-3">{{$producto->nombre}}</h5>
                                                         <p class="description">
-                                                            {{$user->email}}<br>
-                                                            {{$user->created_at}}<br>
+                                                            @foreach ($productos as $p )
+                                                                {{$p->proveedor}}<br>
+                                                            @endforeach
+                                                            {{$producto->descripcion}}<br>
+                                                            {{$producto->precio}}<br>
+                                                            {{$producto->existencia}}<br>
                                                         </p>
                                                     </div>
                                                 </p>
@@ -38,11 +42,11 @@
                                             <div class="card-footer">
 
                                                 <div class="button-container">
-                                                    <a href="{{route('usuarios.index')}}">
+                                                    <a href="{{route('producto.index')}}">
                                                         <button class="btn btn-sm">Regresar</button> </a>
                                                 </div>
                                                 <div class="button-container">
-                                                    <a href="{{route('usuario.edit',$user->id)}}">
+                                                    <a href="{{route('producto.edit',$producto->id)}}">
                                                         <button class="btn btn-sm btn-primary">Editar </button> </a>
                                                 </div>
                                             </div>

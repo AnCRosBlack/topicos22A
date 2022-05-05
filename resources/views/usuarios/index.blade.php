@@ -79,7 +79,8 @@
                                                 <td class="td-actions text-right">
                                                     <a href="{{route('usuarios.show', $user->id)}}" class="btn btn-info"><i class="material-icons">person</i></a>
                                                     <a href="{{route('usuarios.edit', $user->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
-                                                    <a onclick="return EliminarRegistro('Eliminar usuario')" href="{{ route('usuarios.destroy', $user->id) }}" class="btn btn-danger"><i class="material-icons">close</i></a>
+                                                    <a onclick="return EliminarRegistro('Eliminar usuario con el id: {{$user->id}}')" href="{{ route('usuarios.destroy', $user->id) }}" class="btn btn-danger"><i class="material-icons">close</i></a>
+
 
                                                 </td>
 

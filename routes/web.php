@@ -65,5 +65,5 @@ Route::post('/producto/crear',  [ProductController::class, 'storeProducto'])->na
 Route::get('/producto/crear',  [ProductController::class, 'createProducto'])->name('producto.create');
 Route::get('/producto/update/{id}',  [ProductController::class, 'getEditProducto'])->name('producto.getEdit');
 Route::put('/producto/update/{id}',  [ProductController::class, 'editProducto'])->name('producto.edit');
-Route::get('/producto/{id}', [ProductController::class, 'destroyProducto'])->name('producto.destroy');
+Route::get('/productos/{id}', [ProductController::class, 'destroyProducto'])->name('producto.destroy');
 Route::get('/producto/{producto}', [ProductController::class, 'showProducto'])->name('producto.show');

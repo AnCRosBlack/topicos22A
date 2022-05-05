@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'proveedor', 'titlePage' => __('Proveedor')])
+@extends('layouts.app', ['activePage' => 'productos', 'titlePage' => __('Productos')])
 
 @section('content')
 
@@ -43,8 +43,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">Proveedor</h4>
-                                <p class="card-category">Proveedores registrados</p>
+                                <h4 class="card-title">Productos</h4>
+                                <p class="card-category">Productos registrados</p>
                             </div>
                             <div class="card-body">
                                 @if (session('success'))
@@ -55,7 +55,7 @@
                                 <div class="row">
                                     <div class="col-12 text-right">
 
-                                        <a href="{{ route('proveedor.create') }}" class="btn btn-sm btn-primary">Añadir proveedor</a>
+                                        <a href="{{ route('producto.create') }}" class="btn btn-sm btn-primary">Añadir producto</a>
 
                                     </div>
                                 </div>
@@ -64,28 +64,27 @@
                                         <thead class="text-primary">
                                             <th>ID</th>
                                             <th>Nombre</th>
-                                            <th>Direccion</th>
-                                            <th>Telefono</th>
-                                            <th>Ciudad</th>
-                                            <th>Estado</th>
-                                            <th>País</th>
+                                            <th>Proveedor</th>
+                                            <th>Descripción</th>
+                                            <th>Precio</th>
+                                            <th>Existencia</th>
                                             <th class="text-right">Acciones</th>
 
                                         </thead>
                                         <tbody>
-                                            @foreach($Proveedores as $proveedor)
+                                            @foreach($Productos as $producto)
                                             <tr>
-                                                <td>{{$proveedor->id}} </td>
-                                                <td>{{$proveedor->nombre}} </td>
-                                                <td>{{$proveedor->direccion}} </td>
-                                                <td>{{$proveedor->telefono}} </td>
-                                                <td>{{$proveedor->ciudad}} </td>
-                                                <td>{{$proveedor->estado}} </td>
-                                                <td>{{$proveedor->pais}} </td>
+                                                <td>{{$producto->id}} </td>
+                                                <td>{{$producto->nombre}} </td>
+                                                <td>{{$producto->proveedor}} </td>
+                                                <td>{{$producto->descripcion}} </td>
+                                                <td>{{$producto->precio}} </td>
+                                                <td>{{$producto->existencia}} </td>
+                                            
                                                 <td class="td-actions text-right">
-                                                    <a href="{{route('proveedor.show', $proveedor->id)}}" class="btn btn-info"><i class="material-icons">person</i></a>
-                                                    <a href="{{route('proveedor.edit', $proveedor->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
-                                                    <a onclick="return EliminarRegistro('Eliminar Proveedor con el id: {{$proveedor->id}}')" href="{{ route('proveedor.destroy', $proveedor->id) }}" class="btn btn-danger"><i class="material-icons">close</i></a>
+                                                    <a href="{{route('producto.show', $producto->id)}}" class="btn btn-info"><i class="material-icons">person</i></a>
+                                                    <a href="{{route('producto.edit', $producto->id)}}" class="btn btn-warning"><i class="material-icons">edit</i></a>
+                                                    <a onclick="return EliminarRegistro('Eliminar producto con el id: {{$producto->id}}')" href="{{ route('producto.destroy', $producto->id) }}" class="btn btn-danger"><i class="material-icons">close</i></a>
 
 
                                                 </td>
@@ -100,7 +99,7 @@
                                 </div>
                             </div>
                             <div class="card-footer mr-auto">
-                            {!! $Proveedores->links() !!}
+                            {!! $Productos->links() !!}
                                 {{-- {{$Usuarios->links()}} --}}
                             </div>
                         </div>
