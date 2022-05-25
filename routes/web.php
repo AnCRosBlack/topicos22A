@@ -58,7 +58,6 @@ Route::put('/proveedor/update/{id}',  [ProviderController::class, 'editProveedor
 Route::get('/proveedores/{id}', [ProviderController::class, 'destroyProveedor'])->name('proveedor.destroy');
 Route::get('/proveedor/{proveedor}', [ProviderController::class, 'showProveedor'])->name('proveedor.show');
 
-
 //funciones de producto
 Route::get('/producto',  [ProductController::class, 'indexProducto'])->name('producto.index');
 Route::post('/producto/crear',  [ProductController::class, 'storeProducto'])->name('producto.store');
